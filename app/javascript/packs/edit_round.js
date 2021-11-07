@@ -1,5 +1,4 @@
 console.log('canEdit', window.canEdit);
-
 const keyboard = document.querySelector('.keyboard');
 const scores = document.querySelector('.scores');
 const totalScore = document.querySelector('#total');
@@ -26,7 +25,6 @@ function updateScore({ currentArrow, score }) {
 
 function calculateAndUpdateTotal() {
   const total = Array.from(scores.children).reduce((acc, score) => {
-    console.log({ acc, score: score.innerText });
     if (score.innerText === '') return acc;
     const value = score.innerText === 'X' ? 10 : parseInt(score.innerText);
     return acc + value;
@@ -38,7 +36,6 @@ function init() {
   if (!window.canEdit) {
     setInterval(() => {
       window.location.reload();
-      console.log('reloading');
     }, 10_000);
     return;
   }
@@ -47,8 +44,6 @@ function init() {
     keyboard.style.display = 'grid';
     currentArrow = parseInt(event.target.value);
     updateColorForNode(event.target);
-
-    console.log({ currentArrow });
   });
 
   keyboard.addEventListener('click', (event) => {

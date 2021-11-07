@@ -13,8 +13,6 @@ class RoundsController < ApplicationController
       cookies[:my_rounds].split(',').include?(@round.id.to_s) if cookies[
       :my_rounds
     ].present?
-
-    puts "@can_edit #{@can_edit}"
   end
 
   # GET /rounds/new
