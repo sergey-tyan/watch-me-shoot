@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Новая серия', new_round_path %>
+<% if @rounds.count > 0 %>
+  <h2>Все Серии</h2>
+  <table>
+    <tbody>
+      <% @rounds.each do |round| %>
+        <tr>
+          <td><%= round.name %></td>
+          <td><%= link_to 'Показать', round %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<br>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @round.name %>
+</p>
+<div class="scores">
+  <% (0..29).to_a.each do |arrow| %>
+    <% arrow_score = @round.scores[arrow].to_i == -1 ? '' : @round.scores[arrow] %>
+    <button class="arrow" value="<%=arrow%>"><%= arrow_score %></button>
+  <% end %>
+</div>
+<div class="summary">
+  <p>Сумма:  <span id="total"><%= @total %></span></p>
+</div>
+<script>
+  window.canEdit = "<%= @can_edit %>" === 'true';
+</script>
+<div class="keyboard">
+  <% (0..10).to_a.each do |key| %>
+    <button class="key" id="<%=key%>"><%=key%></button>
+  <% end %>
+  <button class="key" id="X">X</button>
+</div>
+<%= javascript_pack_tag 'edit_round' %>
