@@ -15,7 +15,7 @@
 .arrow {
   display: flex;
   flex-direction: row;
-
+  font-size: 4vh;
   height: 5vh;
   align-items: center;
   border: 1px solid salmon;
@@ -29,4 +29,9 @@
   .key {
     height: 6vh;
   }
+}
+
+.key {
+  font-size: 4vh;
+  touch-action: manipulation;
 }

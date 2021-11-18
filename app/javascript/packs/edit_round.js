@@ -52,13 +52,13 @@ function init() {
     updateScore({ currentArrow, score });
     scores.children[currentArrow].innerText = score;
     calculateAndUpdateTotal();
-    if ((currentArrow + 1) % 3 === 0) {
+
+    currentArrow++;
+    if (currentArrow === 30) {
       keyboard.style.display = 'none';
       clearColors();
       return;
     }
-
-    currentArrow++;
     updateColorForNode(scores.children[currentArrow]);
   });
 }
